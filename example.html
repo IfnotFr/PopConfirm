@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PopConfirm Example</title>
+		
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+		
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				// Basic confirmation
+				$("#link").popConfirm();
+				
+				// Custom Title, Content and Placement
+				$("#button").popConfirm({
+					title: "Really ?",
+					content: "I have warned you !",
+					placement: "bottom"
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h1>PopConfirm Example !</h1>
+				<p class="lead">A simple action confirmation plugin for jQuery based on Twitter Bootstrap Popover.</p>
+			</div>
+			
+			<h3>Basic confirmation</h3>
+			<p>Confirmation using default options simple by calling <code>$("#link").popConfirm();</code>.</p>
+			
+			<a href="http://www.google.fr/" id="link">Go to google !</a>
+			
+			<h3>Custom Title, Content and Placement</h3>
+			<p>Confirmation with options <code>title</code>, <code>content</code>, and <code>placement</code> changed.<p>
+			
+			<button type="submit" class="btn btn-default" id="button">Destroy the planet</button>
+		</div>
+		
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="jquery.popconfirm.js"></script>
+	</body>
+</html>
