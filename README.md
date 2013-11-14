@@ -1,6 +1,8 @@
 popconfirm
 ==========
 
+__Compatible Bootstrap 2.3 and Bootstrap 3__
+
 A simple action confirmation plugin for jQuery based on Twitter Bootstrap Popover
 
 ## How to use
@@ -22,6 +24,22 @@ Use the jQuery method `popConfirm()` on any object you want with handle click ev
 </script>
 ```
 
+You can also use `data-toggle` for selecting all elements by default :
+```html
+<a href="mypage.html" data-toggle="pop-confirm">link</a>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("[data-toggle='confirmation']").popConfirm();
+	});
+</script>
+```
+
+## What it handles
+
+* jQuery `.click()` and `.bind('click')` methods
+* Hard coded `onclick` attributes
+* `href` attribute from a `a` lik
+* Submit a form from a `type="submit"` button/input
 
 ## LICENSE - "MIT License"
 
