@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>PopConfirm Testing</title>
+		
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css">
+		
+		<script src="http://code.jquery.com/jquery.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h1>PopConfirm Tests !</h1>
+				<p class="lead">Testing page for PopConfirm functionalities. Sorry, tests are not automated ... Maybe the next time :)</p>
+			</div>
+			
+			<h2>Handling actions</h2>
+			
+			<h4>One or several jquery click click events</h4>
+			
+			<div class="btn btn-success popconfirm test-jquery-click">Test jQuery Click</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+					$('.test-jquery-click').click(function() {
+						alert('Event 1');
+					});
+					$('.test-jquery-click').bind('click', function() {
+						alert('Event 2');
+					});
+				});
+			</script>
+			
+			<h4>Hard Onclick attribute</h4>
+			
+			<div class="btn btn-success popconfirm" onclick="alert('Test Onclick !');">Test Onclick Attribute</div>
+			
+			<h4>Href link</h4>
+			
+			<a href="http://anaelfavre.github.io/PopConfirm/" class="btn btn-success popconfirm">Link</a>
+			
+			<h4>Form submit test</h4>
+			<form method="POST" action="#">
+				<button type="submit" class="btn btn-success popconfirm">Submit</button>
+			</form>
+		</div>
+		
+		<script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="jquery.popconfirm.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(".popconfirm").popConfirm();
+			});
+		</script>
+	</body>
+</html>
