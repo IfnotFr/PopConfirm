@@ -25,7 +25,7 @@ $("#link").popConfirm();
 
 ## Full options usage
 ```javascript
-$("#button").popConfirm({
+$("[data-toggle='confirmation']").popConfirm({
         title: "Really ?", // The title of the confirm
         content: "I have warned you !", // The message of the confirm
         placement: "bottom" // The placement of the confirm (Top, Right, Bottom, Left)
