@@ -23,16 +23,6 @@ __2:__ Use the jQuery method `popConfirm()` on any object you want with handle c
 $("#link").popConfirm();
 ```
 
-You can also use `data-toggle` for selecting all elements by default :
-```html
-<a href="mypage.html" data-toggle="pop-confirm">link</a>
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("[data-toggle='confirmation']").popConfirm();
-	});
-</script>
-```
-
 ## Full options usage
 ```javascript
 $("#button").popConfirm({
