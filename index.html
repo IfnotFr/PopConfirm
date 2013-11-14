@@ -31,25 +31,70 @@
           <h1>
 <a name="popconfirm" class="anchor" href="#popconfirm"><span class="octicon octicon-link"></span></a>popconfirm</h1>
 
+<p><strong>Compatible Bootstrap 2.3 and Bootstrap 3</strong></p>
+
 <p>A simple action confirmation plugin for jQuery based on Twitter Bootstrap Popover</p>
 
 <h2>
 <a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h2>
 
-<p>Add the <code>jquery.popconfirm.js</code> file into your Twitter Bootstrap document including jQuery.</p>
+<p><strong>1:</strong> Add the <code>jquery.popconfirm.js</code> file into your Twitter Bootstrap document including jQuery.</p>
 
 <div class="highlight highlight-html"><pre>  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"js/jquery.popconfirm.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
-<p>Use the jQuery method <code>popConfirm()</code> on any object you want with handle click events :</p>
+<p><strong>2:</strong> Use the jQuery method <code>popConfirm()</code> on any object you want with handle click events :</p>
 
 <div class="highlight highlight-html"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"mypage.html"</span> <span class="na">id=</span><span class="s">"link"</span><span class="nt">&gt;</span>link<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
-    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">$</span><span class="p">(</span><span class="s2">"#link"</span><span class="p">).</span><span class="nx">popConfirm</span><span class="p">();</span>
-    <span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
 </pre></div>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">"#link"</span><span class="p">).</span><span class="nx">popConfirm</span><span class="p">();</span>
+</pre></div>
+
+<h2>
+<a name="full-options-usage" class="anchor" href="#full-options-usage"><span class="octicon octicon-link"></span></a>Full options usage</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s2">"[data-toggle='confirmation']"</span><span class="p">).</span><span class="nx">popConfirm</span><span class="p">({</span>
+        <span class="nx">title</span><span class="o">:</span> <span class="s2">"Really ?"</span><span class="p">,</span> <span class="c1">// The title of the confirm</span>
+        <span class="nx">content</span><span class="o">:</span> <span class="s2">"I have warned you !"</span><span class="p">,</span> <span class="c1">// The message of the confirm</span>
+        <span class="nx">placement</span><span class="o">:</span> <span class="s2">"bottom"</span> <span class="c1">// The placement of the confirm (Top, Right, Bottom, Left)</span>
+<span class="p">});</span>
+</pre></div>
+
+<h2>
+<a name="what-it-handles" class="anchor" href="#what-it-handles"><span class="octicon octicon-link"></span></a>What it handles</h2>
+
+<ul>
+<li>jQuery <code>.click()</code> and <code>.bind('click')</code> methods</li>
+<li>Hard coded <code>onclick</code> attributes</li>
+<li>
+<code>href</code> attribute from a <code>a</code> lik</li>
+<li>Submit a form from a <code>type="submit"</code> button/input</li>
+</ul><h2>
+<a name="license---mit-license" class="anchor" href="#license---mit-license"><span class="octicon octicon-link"></span></a>LICENSE - "MIT License"</h2>
+
+<p>Copyright (c) 2013 Anael Favre, <a href="http://www.xn--anal-npa.com">http://www.anaël.com/</a></p>
+
+<p>Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</p>
         </section>
 
         <aside id="sidebar">
