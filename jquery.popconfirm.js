@@ -71,7 +71,7 @@
 					
 					self.next('.popover').find('.confirm-dialog-btn-confirm').bind('click', function(e) {
 						for(var i = 0; i < arrayActions.length; i++) {
-							arrayActions[i]();
+							arrayActions[i].apply(self);
 						}
 						
 						self.popover('hide');
