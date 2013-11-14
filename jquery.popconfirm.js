@@ -9,21 +9,49 @@
 			var options =  $.extend(defaults, options);
 			
 			return this.each(function() {
-				var $elem = $(this);
+				var self = $(this);
+				var arrayActions = [];
 				
-				//is there an existing click handler registered
-				if ($elem.data('events') && $elem.data('events').click) {
-					//save the handler (TODO: assumes only one)
-					var targetClickFun = $elem.data('events').click[0].handler;
-					//unbind it to prevent it firing
-					$elem.unbind('click');
-				}
-				else{
-					//assume there is a href attribute to redirect to
-					var targetClickFun = function() {window.location.href = $elem.attr('href');};
+				// If there are jquery click events
+				if (typeof(jQuery._data(this, "events")) != "undefined" && typeof(jQuery._data(this, "events")['click']) != "undefined") {
+					
+					// Save all click handlers
+					for (var i = 0; i < jQuery._data(this, "events")['click'].length; i++) {
+						arrayActions.push(jQuery._data(this, "events")['click'][i].handler);
+					}
+					
+					// unbind it to prevent it firing
+					$(self).unbind("click");
 				}
 				
-				$elem.popover({
+				// If there are hard onclick attribute
+				if(typeof self.attr('onclick') != 'undefined') {
+					// Extracting the onclick code to evaluate and bring it into a closure
+					var code = self.attr('onclick');
+					arrayActions.push(function() {
+						eval(code);
+					});
+					$(self).removeAttr('onclick');
+				}
+				
+				// If there are href link defined
+				if(typeof self.attr('href') != 'undefined') {
+					// Assume there is a href attribute to redirect to
+					arrayActions.push(function() {
+						window.location.href = self.attr('href');
+					});
+				}
+				
+				// If the button is a submit one
+				if(typeof self.attr('type') != 'undefined' && self.attr('type') == 'submit') {
+					// Get the form related to this button then store submiting in closure
+					var form = $(this).parents('form:first');
+					arrayActions.push(function() {
+						form.submit();
+					});
+				}
+				
+				self.popover({
 					trigger: 'manual',
 					title: options.title,
 					html: true,
@@ -35,18 +63,21 @@
 						</p>\
 					'
 				});
-						
-				$elem.bind('click', function(e) {
+				
+				self.bind('click', function(e) {
 					e.preventDefault();
 					
-					$elem.popover('show');
+					self.popover('show');
 					
-					$elem.next('.popover').find('.confirm-dialog-btn-confirm').bind('click', function(e) {
-						targetClickFun();
-						$elem.popover('hide');
+					self.next('.popover').find('.confirm-dialog-btn-confirm').bind('click', function(e) {
+						for(var i = 0; i < arrayActions.length; i++) {
+							arrayActions[i]();
+						}
+						
+						self.popover('hide');
 					});
-					$elem.next('.popover').find('.confirm-dialog-btn-abord').bind('click', function(e) {
-						$elem.popover('hide');
+					self.next('.popover').find('.confirm-dialog-btn-abord').bind('click', function(e) {
+						self.popover('hide');
 					});
 				});
 			});
