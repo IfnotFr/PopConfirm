@@ -7,7 +7,7 @@
 				placement: 'right'
 			};
 			var options =  $.extend(defaults, options);
-			var clickedAway = false;
+			var last = null;
 			
 			return this.each(function() {
 				var self = $(this);
@@ -64,26 +64,14 @@
 						</p>\
 					'
 				}).click(function(e) {
-					clickedAway = false;
-				});
-				
-				$(document).click(function() {
-					if(clickedAway) {
-						self.popover('hide')
-					}
-					else {
-						clickedAway = true
-					}
+					if(last) last.popover('hide');
+					last = self;
 				});
 				
 				self.bind('click', function(e) {
 					e.preventDefault();
 					
 					self.popover('show');
-					
-					$('.popover').bind('click', function(e) {
-						clickedAway = false;
-					});
 					
 					self.next('.popover').find('.confirm-dialog-btn-confirm').bind('click', function(e) {
 						for(var i = 0; i < arrayActions.length; i++) {
