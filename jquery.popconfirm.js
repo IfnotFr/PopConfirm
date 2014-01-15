@@ -7,6 +7,7 @@
 				placement: 'right'
 			};
 			var options =  $.extend(defaults, options);
+			var clickedAway = false;
 			
 			return this.each(function() {
 				var self = $(this);
@@ -62,12 +63,27 @@
 							<button type="button" class="btn btn-small confirm-dialog-btn-abord">Non</button>\
 						</p>\
 					'
+				}).click(function(e) {
+					clickedAway = false;
+				});
+				
+				$(document).click(function() {
+					if(clickedAway) {
+						self.popover('hide')
+					}
+					else {
+						clickedAway = true
+					}
 				});
 				
 				self.bind('click', function(e) {
 					e.preventDefault();
 					
 					self.popover('show');
+					
+					$('.popover').bind('click', function(e) {
+						clickedAway = false;
+					});
 					
 					self.next('.popover').find('.confirm-dialog-btn-confirm').bind('click', function(e) {
 						for(var i = 0; i < arrayActions.length; i++) {
