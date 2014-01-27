@@ -64,7 +64,7 @@
 						</p>\
 					'
 				}).click(function(e) {
-					if(last) last.popover('hide');
+					if(last && last !== self) last.popover('hide');
 					last = self;
 				});
 				
