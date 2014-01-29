@@ -5,6 +5,10 @@ __Compatible Bootstrap 2.3 and Bootstrap 3__
 
 A simple action confirmation plugin for jQuery based on Twitter Bootstrap Popover
 
+## Example
+
+Please, check our simple example here : http://jsfiddle.net/RDh7E/2/
+
 ## How to use
 
 __1:__ Add the `jquery.popconfirm.js` file into your Twitter Bootstrap document including jQuery.
@@ -38,7 +42,3 @@ $("[data-toggle='confirmation']").popConfirm({
 * Hard coded `onclick` attributes
 * `href` attribute from a `a` lik
 * Submit a form from a `type="submit"` button/input
-
-## Todo
-
-* Option for closing PopOver when clicking outside
