@@ -1,3 +1,16 @@
+/*!
+ * PopConfirm 0.1
+ * http://anaelfavre.github.io/PopConfirm/
+ *
+ * Use jQuery & Bootstrap
+ * http://jquery.com/
+ * http://getbootstrap.com/
+ *
+ * Copyright 2014 Anael Favre and other contributors
+ * Released under the MIT license
+ * https://raw.github.com/AnaelFavre/PopConfirm/master/LICENCE
+ */
+
 (function($){
 	$.fn.extend({
 		popConfirm: function(options) {
@@ -61,15 +74,19 @@
 						<p class="button-group" style="margin-top: 10px; text-align: center;">\
 							<button type="button" class="btn btn-small btn-danger confirm-dialog-btn-confirm">Oui</button>\
 							<button type="button" class="btn btn-small confirm-dialog-btn-abord">Non</button>\
-						</p>\
-					'
+						</p>'
 				}).click(function(e) {
 					if(last && last !== self) last.popover('hide');
 					last = self;
 				});
 				
+				$(document).on('click', function(){
+				    if (last) last.popover('hide');
+				});
+
 				self.bind('click', function(e) {
 					e.preventDefault();
+					e.stopPropagation();
 					
 					self.popover('show');
 					
