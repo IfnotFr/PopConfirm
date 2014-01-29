@@ -12,7 +12,7 @@
 		<div class="container">
 			<div class="page-header">
 				<h1>PopConfirm Tests !</h1>
-				<p class="lead">Testing page for PopConfirm functionalities. Sorry, tests are not automated ... Maybe the next time :)</p>
+				<p class="lead">Testing page for PopConfirm functionalities. Sorry, tests are not automated ... Maybe next time :)</p>
 			</div>
 			
 			<h2>Handling actions</h2>
@@ -43,6 +43,10 @@
 			<form method="POST" action="#">
 				<button type="submit" class="btn btn-success popconfirm">Submit</button>
 			</form>
+			
+			<h4>Test two classes (single instance across several handlers)</h4>
+			<div><a href="#" class="btn btn-success popconfirm1">Class 1</a></div>
+			<div><a href="#" class="btn btn-success popconfirm2">Class 2</a></div>
 		</div>
 		
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
@@ -50,6 +54,9 @@
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$(".popconfirm").popConfirm();
+				
+				$(".popconfirm1").popConfirm();
+				$(".popconfirm2").popConfirm();
 			});
 		</script>
 	</body>
