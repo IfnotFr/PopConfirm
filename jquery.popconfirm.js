@@ -17,7 +17,9 @@
 			var defaults = {
 				title: 'Confirmation',
 				content: 'Are you really sure ?',
-				placement: 'right'
+				placement: 'right',
+				yesBtn:   'Yes',
+				noBtn:    'No'
 			};
 			var options =  $.extend(defaults, options);
 			var last = null;
@@ -72,8 +74,8 @@
 					placement: options.placement,
 					content: options.content + '\
 						<p class="button-group" style="margin-top: 10px; text-align: center;">\
-							<button type="button" class="btn btn-small btn-danger confirm-dialog-btn-confirm">Oui</button>\
-							<button type="button" class="btn btn-small confirm-dialog-btn-abord">Non</button>\
+							<button type="button" class="btn btn-small btn-danger confirm-dialog-btn-confirm">' + options.yesBtn + '</button>\
+							<button type="button" class="btn btn-small confirm-dialog-btn-abord">' + options.noBtn + '</button>\
 						</p>'
 				}).click(function(e) {
 					if(last && last !== self) last.popover('hide');
