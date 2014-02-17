@@ -34,7 +34,7 @@ $("[data-toggle='confirmation']").popConfirm({
         content: "I have warned you !", // The message of the confirm
         placement: "bottom", // The placement of the confirm (Top, Right, Bottom, Left)
         yesBtn:   'Yeah',
-	noBtn:    'Oh no !!!'
+        noBtn:    'Oh no !!!'
 });
 ```
 
