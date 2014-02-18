@@ -7,7 +7,7 @@ A simple action confirmation plugin for jQuery based on Twitter Bootstrap Popove
 
 ## Example
 
-Please, check our simple example here : http://jsfiddle.net/RDh7E/2/
+Please, check our simple example here : http://jsfiddle.net/RDh7E/9/
 
 ## How to use
 
