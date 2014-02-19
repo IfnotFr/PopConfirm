@@ -18,6 +18,7 @@
 				title: 'Confirmation',
 				content: 'Are you really sure ?',
 				placement: 'right',
+				container: 'body',
 				yesBtn:   'Yes',
 				noBtn:    'No'
 			};
@@ -72,6 +73,7 @@
 					title: options.title,
 					html: true,
 					placement: options.placement,
+					container: options.container,
 					content: options.content + '\
 						<p class="button-group" style="margin-top: 10px; text-align: center;">\
 							<button type="button" class="btn btn-small btn-danger confirm-dialog-btn-confirm">' + options.yesBtn + '</button>\

@@ -33,8 +33,9 @@ $("[data-toggle='confirmation']").popConfirm({
         title: "Really ?", // The title of the confirm
         content: "I have warned you !", // The message of the confirm
         placement: "bottom", // The placement of the confirm (Top, Right, Bottom, Left)
-        yesBtn:   'Yeah',
-        noBtn:    'Oh no !!!'
+        container: "body", // The html container
+        yesBtn: "Yeah",
+        noBtn: "Oh no !!!"
 });
 ```
 
