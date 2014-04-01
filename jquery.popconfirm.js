@@ -94,16 +94,31 @@
 					
 					self.popover('show');
 					
-					self.next('.popover').find('.confirm-dialog-btn-confirm').bind('click', function(e) {
-						for(var i = 0; i < arrayActions.length; i++) {
-							arrayActions[i].apply(self);
-						}
-						
-						self.popover('hide');
-					});
-					self.next('.popover').find('.confirm-dialog-btn-abord').bind('click', function(e) {
-						self.popover('hide');
-					});
+					if(options.container==="body"){
+					
+						$('.popover').on('click','.confirm-dialog-btn-confirm', function(e) {
+							for(var i = 0; i < arrayActions.length; i++) {						
+								arrayActions[i].apply(self);
+							}
+							self.popover('hide');
+						}).on('click','.confirm-dialog-btn-abord', function(e) {						
+							console.log(options);
+							self.popover('hide');
+						});
+					
+					} else {					
+					
+						self.next('.popover').on('click','.confirm-dialog-btn-confirm', function(e) {
+							for(var i = 0; i < arrayActions.length; i++) {
+								arrayActions[i].apply(self);
+							}						
+							self.popover('hide');
+						}).on('click','.confirm-dialog-btn-abord', function(e) {						
+							console.log('cancel');
+							self.popover('hide');
+						});
+										
+					}
 				});
 			});
 		}
