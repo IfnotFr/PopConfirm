@@ -11,7 +11,7 @@ Please, check our simple example here : http://jsfiddle.net/RDh7E/9/
 
 ## Extended popConfirm example:
 
-Please, check example here: http://jsfiddle.net7nYZw/
+Please, check example here: http://jsfiddle.net/7nYZw/
 
 
 ## How to use
