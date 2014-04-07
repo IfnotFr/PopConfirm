@@ -9,6 +9,11 @@ A simple action confirmation plugin for jQuery based on Twitter Bootstrap Popove
 
 Please, check our simple example here : http://jsfiddle.net/RDh7E/9/
 
+## Extended popConfirm example:
+
+Please, check example here: http://jsfiddle.net7nYZw/
+
+
 ## How to use
 
 __1:__ Add the `jquery.popconfirm.js` file into your Twitter Bootstrap document including jQuery.
@@ -16,6 +21,11 @@ __1:__ Add the `jquery.popconfirm.js` file into your Twitter Bootstrap document 
 ```html
   <script type="text/javascript" src="js/jquery.popconfirm.js"></script>
 ```
+
+```html
+  <script type="text/javascript" src="js/jquery.popconfirm.extended.js"></script>
+```
+
 
 __2:__ Use the jQuery method `popConfirm()` on any object you want with handle click events :
 
@@ -37,6 +47,20 @@ $("[data-toggle='confirmation']").popConfirm({
         yesBtn: "Yeah",
         noBtn: "Oh no !!!"
 });
+```
+
+## Extended usage
+```html
+     <a class="popconfirm btn"
+      data-popconfirm-to="URL"
+			data-popconfirm-title="Title extended"
+			data-popconfirm-content="Some content for extended"
+			data-popconfirm-placement="bottom"
+			data-popconfirm-container="body"
+			data-popconfirm-yes="Confirm extended"
+			data-popconfirm-no="Cancel extended"
+                      >
+                      Confirm</a>
 ```
 
 ## What it handles
