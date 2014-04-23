@@ -93,12 +93,12 @@
           <button type="button" class="btn btn-small confirm-dialog-btn-abord">' + options.noBtn + '</button>\
           </p>'
         }).click(function(e) {
-          if(last && last !== self) last.popover('hide');
+          if(last && last !== self) last.popover('hide').removeClass('popconfirm-active');
           last = self;
         });
 
         $(document).on('click', function(){
-          if (last) last.popover('hide');
+          if (last) last.popover('hide').removeClass('popconfirm-active');
         });
 
         self.bind('click', function(e) {
@@ -107,7 +107,8 @@
           e.preventDefault();
           e.stopPropagation();
 
-          self.popover('show');
+          $('.popconfirm-active').popover('hide').removeClass('popconfirm-active');
+          self.popover('show').addClass('popconfirm-active');
 
           $(document).find('.popover .confirm-dialog-btn-confirm').bind('click', function(e) {
             for(var i = 0; i < arrayActions.length; i++) {
@@ -118,10 +119,10 @@
               arrayDelegatedActions[i].apply(self, [eventToConfirm.originalEvent]);
             }
 
-            self.popover('hide');
+            self.popover('hide').removeClass('popover-active');
           });
           $(document).find('.popover .confirm-dialog-btn-abord').bind('click', function(e) {
-            self.popover('hide');
+            self.popover('hide').removeClass('popover-active');
           });
         });
       });
