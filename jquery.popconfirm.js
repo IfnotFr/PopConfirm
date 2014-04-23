@@ -43,6 +43,17 @@
           $(self).unbind("click");
         }
 
+        // If there are jquery delegated click events
+        if (self.data('remote') && typeof(jQuery._data(document, "events")) != "undefined" && typeof(jQuery._data(document, "events")['click']) != "undefined") {
+
+          // Save all delegated click handlers that apply
+          for (var i = 0; i < jQuery._data(document, "events")['click'].length; i++) {
+            var elmType = self[0].tagName.toLowerCase();
+            if(typeof jQuery._data(document, "events")['click'][i].selector != "undefined" && jQuery._data(document, "events")['click'][i].selector.indexOf(elmType + "[data-remote]") > -1)
+              arrayDelegatedActions.push(jQuery._data(document, "events")['click'][i].handler);
+          }
+        }
+
         // If there are hard onclick attribute
         if(typeof self.attr('onclick') != 'undefined') {
           // Extracting the onclick code to evaluate and bring it into a closure
@@ -54,7 +65,7 @@
         }
 
         // If there are href link defined
-        if(typeof self.attr('href') != 'undefined') {
+        if(!self.data('remote') && typeof self.attr('href') != 'undefined') {
           // Assume there is a href attribute to redirect to
           arrayActions.push(function() {
             window.location.href = self.attr('href');
