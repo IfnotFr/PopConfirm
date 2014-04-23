@@ -28,6 +28,8 @@
       return this.each(function() {
         var self = $(this);
         var arrayActions = [];
+        var arrayDelegatedActions = [];
+        var eventToConfirm;
 
         // If there are jquery click events
         if (typeof(jQuery._data(this, "events")) != "undefined" && typeof(jQuery._data(this, "events")['click']) != "undefined") {
@@ -89,6 +91,8 @@
         });
 
         self.bind('click', function(e) {
+          eventToConfirm = e;
+
           e.preventDefault();
           e.stopPropagation();
 
@@ -97,6 +101,10 @@
           self.next('.popover').find('.confirm-dialog-btn-confirm').bind('click', function(e) {
             for(var i = 0; i < arrayActions.length; i++) {
               arrayActions[i].apply(self);
+            }
+
+            for(var i = 0; i < arrayDelegatedActions.length; i++) {
+              arrayDelegatedActions[i].apply(self, [eventToConfirm.originalEvent]);
             }
 
             self.popover('hide');
