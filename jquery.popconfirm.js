@@ -98,7 +98,7 @@
 
           self.popover('show');
 
-          document.find('.popover .confirm-dialog-btn-confirm').bind('click', function(e) {
+          $(document).find('.popover .confirm-dialog-btn-confirm').bind('click', function(e) {
             for(var i = 0; i < arrayActions.length; i++) {
               arrayActions[i].apply(self);
             }
@@ -109,7 +109,7 @@
 
             self.popover('hide');
           });
-          document.find('.popover .confirm-dialog-btn-abord').bind('click', function(e) {
+          $(document).find('.popover .confirm-dialog-btn-abord').bind('click', function(e) {
             self.popover('hide');
           });
         });
