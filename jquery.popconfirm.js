@@ -107,7 +107,7 @@
           e.preventDefault();
           e.stopPropagation();
 
-          $('.popconfirm-active').popover('hide').removeClass('popconfirm-active');
+          $('.popconfirm-active').not(self).popover('hide').removeClass('popconfirm-active');
           self.popover('show').addClass('popconfirm-active');
 
           $(document).find('.popover .confirm-dialog-btn-confirm').bind('click', function(e) {
@@ -119,10 +119,10 @@
               arrayDelegatedActions[i].apply(self, [eventToConfirm.originalEvent]);
             }
 
-            self.popover('hide').removeClass('popover-active');
+            self.popover('hide').removeClass('popconfirm-active');
           });
           $(document).find('.popover .confirm-dialog-btn-abord').bind('click', function(e) {
-            self.popover('hide').removeClass('popover-active');
+            self.popover('hide').removeClass('popconfirm-active');
           });
         });
       });
