@@ -156,6 +156,7 @@
 						}).on('click','.confirm-dialog-btn-abord', function(e) {						
 							console.log(options);
 							self.popover('hide');
+							$(this).off(e);
 						});
 					
 					} else {					
@@ -168,6 +169,7 @@
 						}).on('click','.confirm-dialog-btn-abord', function(e) {						
 							console.log('cancel');
 							self.popover('hide');
+							$(this).off(e);
 						});
 										
 					}
