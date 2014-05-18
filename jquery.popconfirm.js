@@ -1,5 +1,5 @@
 /*!
-* PopConfirm 0.1
+* PopConfirm 0.2
 * http://ifnot.github.io/PopConfirm/
 *
 * Use jQuery & Bootstrap
@@ -9,6 +9,10 @@
 * Copyright 2014 Anael Favre and other contributors
 * Released under the MIT license
 * https://raw.github.com/AnaelFavre/PopConfirm/master/LICENCE
+*
+* Thanks to contributors : 
+* Thomas Hanson https://github.com/diresquirrel
+* Mohamed Aymen https://github.com/kernel64
 */
 
 (function($){
