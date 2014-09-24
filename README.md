@@ -39,6 +39,14 @@ $("[data-toggle='confirmation']").popConfirm({
 });
 ```
 
+You can also pass parameters using the html attribute : data-confirm-* (replace * by the option name).
+
+Example :
+```html
+<a href="destination.html" data-confirm-title="My Super Title" data-confirm-content="My Super Question">Link</a>
+```
+
+
 ## What it handles
 
 * jQuery `.click()` and `.bind('click')` methods
