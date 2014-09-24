@@ -34,6 +34,16 @@
         var arrayActions = [];
         var arrayDelegatedActions = [];
         var eventToConfirm;
+        
+        // Load data-* attriutes
+        for(var optName in options) {
+          var optValue = $(this).attr('data-confirm-' + optName);
+
+          // For some browsers, `attr` is undefined; for others, `attr` is false.  Check for both.
+          if (typeof optValue !== typeof undefined && optValue !== false) {
+            options[optName] = optValue;
+          }
+        }
 
         // If there are jquery click events
         if (typeof(jQuery._data(this, "events")) != "undefined" && typeof(jQuery._data(this, "events")['click']) != "undefined") {
