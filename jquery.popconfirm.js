@@ -1,5 +1,5 @@
 /*!
- * PopConfirm 0.3
+ * PopConfirm 0.4
  * http://ifnot.github.io/PopConfirm/
  *
  * Use jQuery & Bootstrap
@@ -13,6 +13,7 @@
  * Thanks to contributors :
  * Thomas Hanson https://github.com/diresquirrel
  * Mohamed Aymen https://github.com/kernel64
+ * Muhammad Ubaid Raza https://github.com/mubaidr
  */
 
 (function ($) {
