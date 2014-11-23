@@ -102,6 +102,8 @@
           // Get the form related to this button then store submiting in closure
           form = $(this).parents('form:first');
           arrayActions.push(function () {
+            hiddenInput = '<input type="hidden" name="' + self.attr('name') + '" value="' + self.val() + '" />';
+            form.append(hiddenInput);
             form.submit();
           });
         }
