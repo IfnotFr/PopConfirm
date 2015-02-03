@@ -83,8 +83,7 @@
           // Extracting the onclick code to evaluate and bring it into a closure
           code = self.attr('onclick');
           arrayActions.push(function () {
-            //eval(code);
-            (new Function(code))();
+            eval(code);
           });
           $(self).removeAttr('onclick');
         }
