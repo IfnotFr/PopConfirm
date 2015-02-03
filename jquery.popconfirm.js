@@ -1,5 +1,5 @@
 /*!
- * PopConfirm 0.4
+ * PopConfirm 0.4.1
  * http://ifnot.github.io/PopConfirm/
  *
  * Use jQuery & Bootstrap
