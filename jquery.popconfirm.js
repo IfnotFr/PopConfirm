@@ -1,5 +1,5 @@
 /*!
- * PopConfirm 0.4.2
+ * PopConfirm 0.4.3
  * http://ifnot.github.io/PopConfirm/
  *
  * Use jQuery & Bootstrap
@@ -85,7 +85,7 @@
           arrayActions.push(function () {
             eval(code);
           });
-          $(self).removeAttr('onclick');
+          $(self).prop("onclick", null);
         }
 
         // If there are href link defined
