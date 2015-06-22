@@ -92,7 +92,8 @@
         if (!self.data('remote') && self.attr('href')) {
           // Assume there is a href attribute to redirect to
           arrayActions.push(function () {
-            window.location.href = self.attr('href');
+            $(self).unbind("click");
+            $(self).click();
           });
         }
 
