@@ -1,0 +1,19 @@
+{
+  "name": "popconfirm",
+  "description": "A simple action confirmation plugin for jQuery based on Twitter Bootstrap Popover",
+  "keywords": [
+    "bootstrap",
+    "confirmation"
+  ],
+  "authors": [
+    "Anael Favre <anael.favre@gmail.com>"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
