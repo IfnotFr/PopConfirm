@@ -1,6 +1,7 @@
 {
   "name": "popconfirm",
   "description": "A simple action confirmation plugin for jQuery based on Twitter Bootstrap Popover",
+  "main": "jquery.popconfirm.js",
   "keywords": [
     "bootstrap",
     "confirmation"
