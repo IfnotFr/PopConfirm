@@ -112,7 +112,7 @@
           placement: options.placement,
           container: options.container,
           //Avoid using multiline strings, no support in older browsers.
-          content: options.content + '<p class="button-group" style="margin-top: 10px; text-align: center;"><button type="button" class="btn btn-small confirm-dialog-btn-abord">' + options.noBtn + '</button> <button type="button" class="btn btn-small btn-danger confirm-dialog-btn-confirm">' + options.yesBtn + '</button></p>'
+          content: options.content + '<p class="button-group" style="margin-top: 10px; text-align: center;"><button type="button" class="btn btn-small confirm-dialog-btn-abort">' + options.noBtn + '</button> <button type="button" class="btn btn-small btn-danger confirm-dialog-btn-confirm">' + options.yesBtn + '</button></p>'
         }).click(function (e) {
           if (last && last !== self) {
             last.popover('hide').removeClass('popconfirm-active');
