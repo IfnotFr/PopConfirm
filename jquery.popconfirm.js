@@ -101,6 +101,10 @@
           // Get the form related to this button then store submiting in closure
           form = $(this).parents('form:first');
           arrayActions.push(function () {
+            // Add the button name / value if specified
+            if(typeof self.attr('name') !== "undefined") {
+              $('<input type="hidden">').attr('name', self.attr('name')).attr('value', self.attr('value')).appendTo(form);
+            }
             form.submit();
           });
         }
