@@ -101,6 +101,11 @@
           // Get the form related to this button then store submiting in closure
           form = $(this).parents('form:first');
           arrayActions.push(function () {
+            var hidden = document.createElement('input');
+            hidden.type = 'hidden';
+            hidden.name = self.attr('name');
+            hidden.value = self.attr('value');
+            form.append(hidden);
             form.submit();
           });
         }
