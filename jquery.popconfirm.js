@@ -135,7 +135,7 @@
           $('.popconfirm-active').not(self).popover('hide').removeClass('popconfirm-active');
           self.popover('show').addClass('popconfirm-active');
 
-          $(document).find('.popover .confirm-dialog-btn-confirm').bind('click', function (e) {
+          $(document).find('.popover .confirm-dialog-btn-confirm').one('click', function (e) {
             for (i = 0; i < arrayActions.length; i = i + 1) {
               arrayActions[i].apply(self);
             }
