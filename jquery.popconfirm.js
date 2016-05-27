@@ -140,6 +140,8 @@
           self.popover('show').addClass('popconfirm-active');
 
           $(document).find('.popover .confirm-dialog-btn-confirm').one('click', function (e) {
+            if (options.onYes) options.onYes()
+
             for (i = 0; i < arrayActions.length; i = i + 1) {
               arrayActions[i].apply(self);
             }
@@ -151,6 +153,7 @@
             self.popover('hide').removeClass('popconfirm-active');
           });
           $(document).find('.popover .confirm-dialog-btn-abord').bind('click', function (e) {
+            if (options.onNo) options.onNo()
             self.popover('hide').removeClass('popconfirm-active');
           });
         });
