@@ -132,9 +132,10 @@
 
         self.bind('click', function (e) {
           eventToConfirm = e;
-
-          e.preventDefault();
-          e.stopPropagation();
+          if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
 
           $('.popconfirm-active').not(self).popover('hide').removeClass('popconfirm-active');
           self.popover('show').addClass('popconfirm-active');
