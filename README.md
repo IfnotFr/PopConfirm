@@ -21,6 +21,13 @@ __2:__ Use the jQuery method `popConfirm()` on any object you want with handle c
 
 ```html
 <a href="mypage.html" id="link">link</a>
+```
+
+```javascript
+$("#link").popConfirm();
+```
+
+```html
 <button class="btn btn-success" data-toggle='confirmation' id="button">button</button>
 ```
 
@@ -29,7 +36,6 @@ $('#button').click(function() {
     alert('You clicked, and valided this button !');
 });
 
-$("#link").popConfirm();
 $("#button").popConfirm();
 ```
 
