@@ -141,7 +141,7 @@
 
           $(document).find('.popover .confirm-dialog-btn-confirm').one('click', function (e) {
             for (i = 0; i < arrayActions.length; i = i + 1) {
-              arrayActions[i].apply(self);
+              arrayActions[i].apply(self, [eventToConfirm]);
             }
 
             for (i = 0; i < arrayDelegatedActions.length; i = i + 1) {
